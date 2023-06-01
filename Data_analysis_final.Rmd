@@ -269,7 +269,7 @@ r_refs("references.bib")
 
 
 dataAsNumerical = read.csv(
-  "RawData/RawDataAsNumerical.csv",
+  "RawDataAsNumerical.csv",
   na.strings = "Na",
   header = T,
   sep = ",",
