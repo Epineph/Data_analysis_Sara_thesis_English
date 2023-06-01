@@ -47,13 +47,11 @@ header-includes:
 - \usepackage{adjustbox}
 ---
 
-```{r, include=FALSE}
-# options(knitr.purl.inline = TRUE)
+```{r, include=FALSE
 library(papaja)
 library(bookdown)
 library(rmarkdown)
 library(tinytex)
-# purl("Data_analysis_final.rmd")
 library(RCurl)
 library(tikzDevice)
 library(MANOVA.RM)
@@ -61,14 +59,10 @@ library(nnet)
 library(survey)
 library(surveydata)
 library(formatR)
-# library(tidydice)
 library(magrittr)
 library(tcltk)
-library(tcltk2)
-# library(aplpack)
-# library(shiny)
+library(tcltk2
 library(ggplot2)
-# library(esquisse)
 library(Publish)
 library(tidyverse)
 library(modelr)
@@ -76,10 +70,7 @@ library(equatiomatic)
 library(rstatix)
 library(ez)
 library(psych)
-# library(lme4)
 library(Publish)
-# library(data.table)
-# library(radiant)
 library(dplyr)
 library(statsExpressions)
 library(ggstatsplot)
@@ -98,167 +89,25 @@ library(knitr)
 library(here)
 library(fs)
 library(usethis)
-# library(tikzDevice)
-# library(MASS)
-# library(pander)
 library(pandoc)
 library(jmv)
 library(jtools)
 library(tikzDevice)
 library(Ryacas)
 library(Rmpfr)
-# library(dfoptim)
-# library(npcs)
-# library(pracma)
-# library(NlcOptim)
-# library(quadprog)
 library(Tex4exams)
-# library(lhs)
-# library(interp)
-# library(CommonMean.Copula)
 library(devtools)
 library(rCAT)
 library(Rcpp)
 library(Rcpp11)
 library(RcppArmadillo)
-# library(mvtnorm)
 library(latexpdf)
 library(latexdiffr)
-# library(RcppNumerical)
-# library(cheem)
-# library(scatterplot3d)
-# library(rgl)
-# library(ECOSolveR)
-# library(scs)
-# library(osqp)
-# library(rbibutils)
-# library(Rtsne)
-# library(rticles)
-# library(labdsv)
-# library(shapes)
-# library(fastcluster)
-# library(classInt)
-# library(ADMM)
-# library(CVXR)
-# library(RANN)
-# library(RcppDE)
-# library(Rdpack)
-# library(RSpectra)
-# library(maotai)
-# library(mclustcomp)
-# library(RcppDist)
-# library(sf)
-# library(lpSolve)
-# library(tourr)
-# library(cheem)
-# library(xgboost)
-# library(shapviz)
-# library(ggfittext)
-# library(shades)
-# library(repr)
-# library(RcppTOML)
-# library(learnr)
-# library(ade4)
-# library(seqinr)
-# library(AdMit)
-# library(bgmm)
-# library(plotrix)
-# library(plotprotein)
-# library(Biostatistics)
-# library(BioStatR)
-# library(pharmr)
-# library(reticulate)
-# library(pharmaverse)
-# library(DataVisualizations)
-# library(exams)
-# library(magick)
-# library(base64enc)
-# library(bit64)
-# library(igraph)
-# library(rjson)
-# library(BioGenerics)
-# library(BiocVersion)
-# library(Chemminer)
-# library(RUnit)
-# library(fmcsR)
-# library(BiocStyle)
-# library(BiocGenerics)
-# library(plogr)
-# library(zlibbioc)
-# library(Biobase)
-# library(RSQLite)
-# library(KEGGREST)
-# library(S4Vectors)
-# library(IRanges)
-# library(XVector)
-# library(GenomeInfoDb)
-# library(AnnotationDbi)
-# library(rcdklibs)
-# library(fingerprint)
-# library(rJava)
-# library(itertools)
-# library(Biostrings)
-# library(GOSemSim)
-# library(rcdk)
-# library(Rcpi)
-# library(slam)
-# library(sets)
-# library(limma)
-# library(matrixStats)
-# library(relations)
-# library(reticulate)
-# library(marray)
-# library(fgsea)
-# library(shinydashboard)
-# library(SnowballC)
-# library(profmem)
-# library(lambda.r)
-# library(futile.options)
-# library(NISTunits)
-# library(MatrixGenerics)
-# library(piano)
-# library(BumpyMatrix)
-# library(lsa)
-# library(bench)
-# library(GenomicRanges)
-# library(S4Arrays)
-# library(DelayedArray)
-# library(BiocBaseUtils)
-# library(futile.logger)
-# library(celestial)
-# library(sm)
-# library(CoreGx)
-# library(SummarizedExperiment)
-# library(MultiAssayExperiment)
-# library(magicaxis)
-# library(BiocParallel)
-# library(coop)
-# library(rcellminer)
-# library(PharmacoGx)
-# 
-# 
-# options(tikzMetricPackages = c(
-# "
-# usepackage[utf8]{inputenc}",
-# "
-# usepackage[T1]{fontenc}",
-# "
-# usetikzlibrary{calc}"
-# ))
 ```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-
-<!-- ```{r} -->
-<!-- rmarkdown::render("Data_analysis_final.Rmd",output_file = "asd.pdf") -->
-
-<!-- ``` -->
-
-
-
 
 ```{r}
 # Setting working directory
@@ -271,25 +120,17 @@ r_refs("references.bib")
 ```
 
 ```{r loading data, echo=FALSE, tidy=TRUE}
-
-
 dataAsNumerical = read.csv(
   "RawDataAsNumerical.csv",
   na.strings = "Na",
   header = T,
   sep = ",",
-
 )
-
 # alternatively, you can load the data with this github file.
 # Just make sure to write data = data.frame(y) if you do so.
 # x <- getURL("https://raw.githubusercontent.com/Epineph/Data_analysis_Sara_thesis_English/main/RawDataAsNumerical.csv")
 # y <- read.csv(text = x)
-# 
-
-
 data = data.frame(dataAsNumerical)
-
 
 # Recoding Sex, SubjectID and Sabbatical as factors
 
@@ -302,7 +143,6 @@ data$sabbatical = as.factor(data$sabbatical)
 # Recoding likert-scale questions and age to numeric variables
 
 recoded_columns = data.frame(data[, 5:22])
-
 
 recoded_columns = lapply(recoded_columns, as.numeric)
 
@@ -342,12 +182,6 @@ d = d %>%
 
 colnames(d)[3] = "gender"
 
-```
-
-```{r}
-
-# 
-# t_test(data = data, formula = SP_EnglishReadingAbility ~ Sex, var.equal = F)
 ```
 # The rationale of using quantitative measurements and statistics to test hypotheses and approximate truth
 
@@ -469,7 +303,6 @@ To calculate the mean in R, we can simply write:
 SP_EngReadAbility_sum = sum(
   d$SP_EnglishReadingAbility)
 
-
 SP_EngReadAbility_n = length(
   d$SP_EnglishReadingAbility)
 
@@ -508,7 +341,6 @@ ggplot(d,
     aes(y = after_stat(count)), 
     bins = 35) + theme_bw()
 ```
-
 
 Next, we might ask the question, are there any variables that might affect respondents self-rated English reading ability? There may exist countless variables that may have an effect, but, more importantly, does my dataset contain any such variable?
 
@@ -566,8 +398,6 @@ cat("the mean for males and females is:",
     d_fem_EngReadAbility_mean, "respectively.")
 ```
 
-
-
 So, if we apply the formula for the mean for males and females we get, $\bar{x}_{male} = \frac{1}{n}\sum^{\Large n}_{i = 1} x_i = \frac{5 + 4 + 4 + 5 +4 ... x_i}{79} = 4.44$ and $\ \bar{x}_{female} =  \frac{1}{n}\sum^{ n}_{ i = 1} x_i = \frac{5 + 4 + 3 + 5 + 5 ... x_i}{79} = 4.02$. In other words, the difference in mean score between males and females, $4.44 - 4.02 = .42$.
 
 The question then becomes, is this difference enough to be significant, or may it just be due to chance that we observed this effect?
@@ -610,7 +440,6 @@ More specifically, the prediction made by the model is subtracted from the actua
 
 Therefore, we can calculate the squared error in the model by using the re-arranged formula above by using the following formula $\sum_{i=1}^{n}\hat{\epsilon_{i}^{2}} = (y_i -\beta_0 + \beta_1x)^2$ mentioned earlier. Since the value predicted by the model is a function of the intercept and slope and observed values plotted into the regression line, i.e., $\hat{y_i} = \beta_0 + \beta_1x_i$, we can simplify the equation for the sum of squared errors (SSE) by substituting $\beta_0 + \beta_1x$ with $\hat{y}_i$, resulting in the following formula:
 
-
 $$
 \begin{aligned}
 \large \sum_{i=1}^{n}\hat{\epsilon_{i}^{2}} &= \large \sum_{i=1}^{n}(y_i - \hat{y_i})^2 \\
@@ -621,7 +450,6 @@ $$
 While equations like this one may look intimidating, the explanation above should hopefully make understanding it a bit more intuitive. In essence, it says that the sum of the estimated squared error (the deviance from each datapoint ) is equal to the the sum of each observed value, $y_i$ minus the predicted value made by the model, $\hat{y_i}$.
 
 The sum of the squared error is therefore a representation of relative accuracy or inaccuracy of the model, i.e., the relative inaccuracy of the model increases as the squared deviance gets larger, whereas when the squared deviance get smaller, the relative accuracy of the model increases. In statistical terms, accuracy represents how much of the variation can be explained by the model contra the amount of variance that remains unexplained.
-
 
 This becomes more intuitive when illustrated, and I will use a fictional data set that turns out represent this concept graphically very well.
 
@@ -652,9 +480,7 @@ ggplot(data = d2, aes(x = age, y = MAP)) +
   geom_point(aes(y = predict(MAP.Age)), shape = 1) +
   theme_bw()
 ```
-
 The concept of error is important to understand, since modelling data will always have some degree of error, and when choosing between models, a general rule of thumb is to use the model that has the least amount of error.
-
 
 The plot illustrates a regression line fitted to the data, i.e., the line connecting the dots that minimizes the error, also called the residual, in the model. In other words, for subject $i$ the difference between the predicted and observed value, i.e. the residual or $\epsilon_{i}$, is given by rewriting the model $y_{i} = \beta_0 + \beta_1x_i + \epsilon_{i}$ to $\epsilon_{i} = y_{i} - \beta_0 - \beta_1x_i$. Therefore, the red line is fitted to the data so that average distance between each observed value (black dot) is as small as possible. Essentially, when a regression model is used to model data while minimising the error, the fitted equation can be defined as $y = \hat{\beta}_0 + \hat{\beta}_1x$ where $\hat{\beta}_0$ and $\hat{\beta}_1$ are the estimated parameters that provide the best fit to the data. In other words, for each observed value $y_i$ and corresponding predictor value $x_i$ the aim is to get the estimated or fitted value $\hat{y} = \beta_0 + \beta_1x$ that minimises the sum of the squared error (SSE).
 
@@ -669,7 +495,6 @@ lm_ReadAbil_by_gender2_apa_print = apa_print(lm_ReadAbil_by_gender2)
 # ![](reg_table_4.png){widht=80%}
 ```
 
-
 The results indicate that the model provides a significant fit, $R^2 = .06$, 90\\% CI $[0.02, 0.11]$, $F(1, 224) = 13.31$, $p < .001$ as well as a significant effect of gender, $b = 0.42$, 95% CI $[0.19, 0.65]$, $t(224) = 3.65$, $p < .001$.
 
 
@@ -683,10 +508,7 @@ This indicates that gender has a significant effect on self-perceived English Sp
 Before doing a t-test to confirm this, let's look at the distribution of responses as a function of gender.
 
 ```{r, echo=FALSE, results='asis', tidy=TRUE, fig.align='center', fig.height=5.0, fig.width=6.0}
-
-
 gghistogram(d, "SP_EnglishReadingAbility", facet.by = "gender", binwidth = 0.3, color = "gender", palette = "aaas")
-
 ```
 
 First, we see that the sample size is much larger for females and that both groups generally rate themselves quite high. The real difference is that the males more consistently choose 4 or 5, whereas females also have many who choose 4 or 5, but a larger proportion of 3 and, to a lesser extent, 2's.
@@ -764,20 +586,13 @@ $$
 = \frac{(4.443 - 4.02 - 0)}{0.112} = 3.786
 $$
 
-
 The Critical value: $\pm t_{\alpha/2, \nu} = \pm t(0.025, 177.339) = \pm 1.973$
 
 The conclusion is therefore that we reject the null-hypothesis $H_0$ that the true difference in means is 0 $p < 0.001$.
 
 Let's make a barplot to illustrate this:
 
-
-
-
-
 ```{r, fig.height=7.0, fig.width=7.0, results='asis', fig.align='center'}
-
-
 ReadAbil_by_gender_t.test = d %>%
   t_test(
     SP_EnglishReadingAbility ~ gender,
@@ -805,9 +620,6 @@ ggbarplot(d, x = "gender", y = "SP_EnglishReadingAbility", color = "gender", pal
     caption = get_pwc_label(stat.test)
     )
 ```
-
-
-
 
 ```{r sumary stats, echo=FALSE, tidy=TRUE}
 
@@ -878,24 +690,13 @@ colnames(summary_stats_male)[1] = "Males"
 
 acrossGenders_sum_stats = cbind(summary_stats_fem, summary_stats_male)
 
-
-
-
-
 ```
-
-
-
-
-
 
 ```{r}
 options("scipen"=100, "digits"=4)
 apa_table(summary_stats_fem)
 apa_table(summary_stats_male)
 ```
-
-
 
 ```{r}
 # jmv_lm_test = jmv::anovaOneW(d, deps = SP_EnglishReadingAbility, group = gender, descPlot = T, phFlag = TRUE, qq = TRUE, phTest = TRUE, phMeanDif = TRUE, desc = TRUE, eqv = TRUE, norm = TRUE, welchs = TRUE)
@@ -907,7 +708,6 @@ apa_table(summary_stats_male)
 ```{r}
 options("scipen"=100, "digits"=4)
 d2 = subset(d, select = -c(SubjectID, Age, sabbatical, Sex_as_num))
-
 
 mydata.long <- d2 %>%
   pivot_longer(-gender, names_to = "variables", values_to = "value")
@@ -929,7 +729,6 @@ table3a = cbind(stat.test$variables, stat.test$n1, stat.test$n2,stat.test$p ,sta
 
 table3a = as.data.frame(table3a)
 
-
 table3a[1:18,1] = c( "ComfortWithPresentEnglishAbilities",
       "ComfortableWithEngTeachingMaterials",
       "ConsideredStudiesWithEngTeaching", "ToWhichDegreeExpectCommunicationInEnglish", "ExpectationsOfLikelihoodToReadEngTexts", "DoesSchoolSufficientlyPrepareforEngTeachingLater", "FreqReadWatchingEngInNonEngClasses", "ImportanceOfEnglishToForFindingWork", "CollaborationBetweenEngVSnonEngClasses", "SP_EnglishAbilityInGeneral", "SP_EnglishReadingAbility", "SP_EnglishSpeakingAbility", "SP_EnglishReadingAbility", "PreparednessForPotentialEngTeachingLater", "ImportanceOfEnglishToForFindingWork", "RatedLikelihoodOfEngCommunicationFutureWork", "RatedLikelihoodToReadEngTextsFutureWork", "WouldRequireExtraSupportForEng")
@@ -939,29 +738,14 @@ table3a$p = round(as.numeric(table3a$p), digits = 4)
 
 table3a$p_adj = round(as.numeric(table3a$p_adj), digits = 4)
 
-
-
 apa_table(table3a)
 
-
-
-
-  
-
-
-
 ```
-
-
-
 
 ```{r, fig.height=7.0, fig.width=7.0, results='asis', fig.align='center'}
 lm_comfortpresentEng_t = lm(ComfortWithPresentEnglishAbilities ~ gender, data = d)
 
-
 pwc_comf = d %>% tukey_hsd(ComfortWithPresentEnglishAbilities ~ gender)
-
-
 
 comf_by_gender_t.test = d %>%
   t_test(
@@ -984,10 +768,7 @@ pwc_comf
 ```{r, fig.height=7.0, fig.width=7.0, results='asis', fig.align='center'}
 lm_engAbilityInGeneral = lm(SP_EnglishAbilityInGeneral ~ gender, data = d)
 
-
 pwc_engAbilInGeneral = d %>% tukey_hsd(SP_EnglishAbilityInGeneral ~ gender)
-
-
 
 engAbilInGeneral_by_gender_t.test = d %>%
   t_test(
@@ -1010,10 +791,7 @@ pwc_engAbilInGeneral
 ```{r, fig.height=7.0, fig.width=7.0, results='asis', fig.align='center'}
 lm_engSpeakingAbility = lm(SP_EnglishSpeakingAbility ~ gender, data = d)
 
-
 pwc_engSpeakAbility = d %>% tukey_hsd(SP_EnglishSpeakingAbility ~ gender)
-
-
 
 engSpeakingAbility_gender_t.test = d %>%
   t_test(
@@ -1036,10 +814,7 @@ pwc_engSpeakAbility
 ```{r, fig.height=7.0, fig.width=7.0, results='asis', fig.align='center'}
 lm_engWritingAbility = lm(SP_EnglishWritingAbility ~ gender, data = d)
 
-
 pwc_engWritingAbility = d %>% tukey_hsd(SP_EnglishWritingAbility ~ gender)
-
-
 
 engWritingAbility_gender_t.test = d %>%
   t_test(
@@ -1064,8 +839,6 @@ pwc_engWritingAbility
 # 
 # apa_lm_by_gender_engRead_type2 = apa_reg_table_lm_ReadAbil_by_Gender$table_block_results[[1]]$model_details_extended
 ```
-
-
 
 \newpage
 
