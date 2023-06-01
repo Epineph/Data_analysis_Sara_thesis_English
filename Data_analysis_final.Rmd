@@ -124,7 +124,7 @@ dataAsNumerical = read.csv(
   "RawDataAsNumerical.csv",
   na.strings = "Na",
   header = T,
-  sep = ",",
+  sep = ","
 )
 # alternatively, you can load the data with this github file.
 # Just make sure to write data = data.frame(y) if you do so.
