@@ -47,7 +47,22 @@ header-includes:
 - \usepackage{adjustbox}
 ---
 
-```{r, include=FALSE
+```{r, include=FALSE}
+if(!requireNamespace("tinytex", quietly = TRUE)) install.packages("tinytex")
+
+tinytex::install_tinytex()
+
+# Install latest CRAN release
+install.packages("papaja")
+
+# Install remotes package if necessary
+if(!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+
+# Install the stable development version from GitHub
+remotes::install_github("crsh/papaja")
+```
+
+```{r, include=FALSE}
 library(papaja)
 library(bookdown)
 library(rmarkdown)
