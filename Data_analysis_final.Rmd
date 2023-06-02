@@ -48,53 +48,36 @@ header-includes:
 ---
 
 ```{r, include=FALSE}
-if(!requireNamespace("tinytex", quietly = TRUE)) install.packages("tinytex")
+library(methods)
+if(!requireNamespace("devtools", quietly = TRUE)){
+  install.packages("devtools")
+} 
 
-tinytex::install_tinytex()
+if(!requireNamespace("tinytex", quietly = TRUE)){
+  install.packages("tinytex")
+  tinytex::install_tinytex()
+} 
+if(!requireNamespace("remotes", quietly = TRUE)){
+  install.packages("remotes")
+  remotes::install_github("crsh/papaja")
+} 
 
-# Install remotes package if necessary
-if(!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+req <- substitute(require(x, character.only = TRUE))
+lbs <- c("bookdown", "rstudioapi", "rmarkdown", "devtools",
+         "Rcurl", "ggplot2", "publish", "tidyverse",
+         "rstatix", "ez", "psych", "dplyr",
+         "statsExpressions", "ggstatsplot", "tidyr",
+         "broom", "ggpubr", "ggsci","gredExtra",
+         "ggsignif", "rmarkdoown", "TeachingDemos",
+         "citr", "knitr", "jmv", "jtools")
+sapply(lbs, function(x) eval(req) || {install.packages(x); eval(req)})
 
-# Install the stable development version from GitHub
-remotes::install_github("crsh/papaja")
 ```
 
 ```{r, include=FALSE}
-library(papaja)
-library(bookdown)
-library(rmarkdown)
-library(tinytex)
-library(devtools)
-library(RCurl)
-library(ggplot2)
-library(Publish)
-library(tidyverse)
-library(rstatix)
-library(ez)
-library(psych)
-library(Publish)
-library(dplyr)
-library(statsExpressions)
-library(ggstatsplot)
-library(tidyr)
-library(broom)
-library(ggpubr)
-library(ggsci)
-library(methods)
-library(gridExtra)
-library(ggsignif)
-library(rmarkdown)
-library(TeachingDemos)
-library(citr)
-library(knitr)
-library(jmv)
-library(jtools)
+
 ```
-```{r}
-req <- substitute(require(x, character.only = TRUE))
-lbs <- c("asd", "erer")
-sapply(lbs, function(x) eval(req) || {install.packages(x); eval(req)})
-```
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -105,8 +88,8 @@ knitr::opts_chunk$set(echo = FALSE)
 # You can use the code below that just sets the working directory,
 # i.e., the directory relative to which the rest of the files are read,
 # to the directory containing the R-markdown script.
-this.dir <- dirname(parent.frame(2)$ofile)
-setwd(this.dir)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+getwd()
 r_refs("references.bib")
 ```
 
