@@ -69,4 +69,6 @@ directory.
 
 # Running the code
 
-In order to run the code, one must first install R: https://cloud.r-project.org/ and R studio https://posit.co/download/rstudio-desktop/. All of which is free software. The packages loaded in the script in the sections with multiple library(name) must be installed by the user. 
+In order to run the code, one must first install R: https://cloud.r-project.org/ and R studio https://posit.co/download/rstudio-desktop/. All of which is free software. The packages loaded in the script in the sections with multiple library(name) must be installed by the user. Finally, it is a good idea to download Rtools, since some packages may need to be built from souce code and need compilation. Rtools can be found here: https://cran.r-project.org/bin/windows/Rtools/
+
+Make sure to download the version that matches your version of R.
