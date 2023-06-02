@@ -90,6 +90,11 @@ library(knitr)
 library(jmv)
 library(jtools)
 ```
+```{r}
+req <- substitute(require(x, character.only = TRUE))
+lbs <- c("asd", "erer")
+sapply(lbs, function(x) eval(req) || {install.packages(x); eval(req)})
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
