@@ -46,7 +46,6 @@ header-includes:
 - \usepackage{lmodern}
 - \usepackage{adjustbox}
 ---
-
 ```{r, include=FALSE}
 library(methods)
 if(!requireNamespace("devtools", quietly = TRUE)){
@@ -62,22 +61,22 @@ if(!requireNamespace("remotes", quietly = TRUE)){
   remotes::install_github("crsh/papaja")
 } 
 
-req <- substitute(require(x, character.only = TRUE))
-lbs <- c("bookdown", "rstudioapi", "rmarkdown", "devtools",
+listOfPackages = list(c("bookdown", "rstudioapi", "rmarkdown", "devtools",
          "Rcurl", "ggplot2", "publish", "tidyverse",
          "rstatix", "ez", "psych", "dplyr",
          "statsExpressions", "ggstatsplot", "tidyr",
-         "broom", "ggpubr", "ggsci","gredExtra",
+         "broom", "ggpubr", "ggsci","gridExtra",
          "ggsignif", "rmarkdoown", "TeachingDemos",
-         "citr", "knitr", "jmv", "jtools")
-sapply(lbs, function(x) eval(req) || {install.packages(x); eval(req)})
+         "citr", "knitr", "jmv", "jtools", "cd", "devtools"))
+
+for (i in listOfPackages){
+     if(!requireNamespace(listOfPackages, quietly = TRUE)){
+         install.packages(i, dependencies = TRUE)
+     }
+     require(i)
+}
 
 ```
-
-```{r, include=FALSE}
-
-```
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
