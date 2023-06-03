@@ -7,9 +7,10 @@ If you put the files in different folers, the code won't work unless you change 
 
 This all depends on the working directory, which I have coded as: 
 
-this.dir <- dirname(parent.frame(2)$ofile)
-setwd(this.dir)
-
+```{r}
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+getwd()
+```
 Here, dirname(parent.frame(2)$ofile) assigns the path of the directory containing your r-markdown file "Data_analysis_final.Rmd" to the variable
 'this.dir' where the function setwd(this.dir) sets the working directory to the path contained in the variable 'this.dir', and hence your working directory is set to the path of the folder that contains your file(s). If all the files in this repository are in the same directory, no code needs to be changed, since R reads the files relative to your working directory.
 
