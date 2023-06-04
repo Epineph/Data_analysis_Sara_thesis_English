@@ -47,33 +47,49 @@ header-includes:
 - \usepackage{adjustbox}
 ---
 ```{r, include=FALSE}
-library(methods)
-if(!requireNamespace("devtools", quietly = TRUE)){
-  install.packages("devtools")
-} 
 
-if(!requireNamespace("tinytex", quietly = TRUE)){
-  install.packages("tinytex")
-  tinytex::install_tinytex()
-} 
-if(!requireNamespace("remotes", quietly = TRUE)){
-  install.packages("remotes")
-  remotes::install_github("crsh/papaja")
-} 
+# this code chunk should install all packages
+# Some packages may need to be compiled from source
+# so therefore it downloading a Rtools version
+# that matches your R-version is a must.
 
-listOfPackages = list(c("bookdown", "rstudioapi", "rmarkdown", "devtools",
-         "Rcurl", "ggplot2", "publish", "tidyverse",
+local({r <- getOption("repos")
+       r["CRAN"] <- "https://cran.r-project.org" 
+       options(repos=r)
+})
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(pak)
+
+if (!require("bookdown")) pak::pak('rstudio/bookdown')
+
+
+.packages = c("rstudioapi", "rmarkdown",
+         "RCurl", "ggplot2", "publish", "tidyverse",
          "rstatix", "ez", "psych", "dplyr",
          "statsExpressions", "ggstatsplot", "tidyr",
          "broom", "ggpubr", "ggsci","gridExtra",
          "ggsignif", "rmarkdoown", "TeachingDemos",
-         "citr", "knitr", "jmv", "jtools", "cd", "devtools"))
+         "citr", "knitr", "jmv", "jtools", "cd")
 
-for (i in listOfPackages){
-     if(!requireNamespace(listOfPackages, quietly = TRUE)){
-         install.packages(i, dependencies = TRUE)
-     }
-     require(i)
+# Install CRAN packages (if not already installed)
+.inst <- .packages %in% installed.packages()
+if(length(.packages[!.inst]) > 0) install.packages(.packages[!.inst], dependencies = TRUE)
+
+# Load packages into session 
+lapply(.packages, require, character.only=TRUE)
+
+remotes::install_github("crsh/papaja")
+library(papaja)
+
+if(!requireNamespace("papaja", quietly = TRUE)){
+  remotes::install_github("crsh/papaja")
+  library(papaja)
+}
+if(!requireNamespace("tinytex", quietly = TRUE)){
+  install.packages("tinytex")
+  tinytex::install_tinytex()
+  library(tinytex)
 }
 
 ```
