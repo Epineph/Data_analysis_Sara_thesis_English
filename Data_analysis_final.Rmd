@@ -53,10 +53,6 @@ header-includes:
 # so therefore it downloading a Rtools version
 # that matches your R-version is a must.
 
-local({r <- getOption("repos")
-       r["CRAN"] <- "https://cran.r-project.org" 
-       options(repos=r)
-})
 
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(pak)
