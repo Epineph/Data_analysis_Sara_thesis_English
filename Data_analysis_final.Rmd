@@ -83,7 +83,9 @@ if(!requireNamespace("tinytex", quietly = TRUE)){
   tinytex::install_tinytex()
   library(tinytex)
 }
-
+library(papaja)
+library(tinytex)
+library(rstudioapi)
 ```
 
 ```{r setup, include=FALSE}
@@ -96,39 +98,7 @@ knitr::opts_chunk$set(echo = FALSE)
 # i.e., the directory relative to which the rest of the files are read,
 # to the directory containing the R-markdown script.
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-getwd()
 r_refs("references.bib")
-```
-```{r, include=FALSE}
-library(papaja)
-library(bookdown)
-library(rmarkdown)
-library(tinytex)
-library(devtools)
-library(RCurl)
-library(ggplot2)
-library(Publish)
-library(tidyverse)
-library(rstatix)
-library(ez)
-library(psych)
-library(Publish)
-library(dplyr)
-library(statsExpressions)
-library(ggstatsplot)
-library(tidyr)
-library(broom)
-library(ggpubr)
-library(ggsci)
-library(methods)
-library(gridExtra)
-library(ggsignif)
-library(rmarkdown)
-library(TeachingDemos)
-library(citr)
-library(knitr)
-library(jmv)
-library(jtools)
 ```
 ```{r loading data, echo=FALSE, tidy=TRUE}
 dataAsNumerical = read.csv(
