@@ -40,7 +40,6 @@ header-includes:
 - \usepackage[ngerman]{babel}
 - \usepackage{microtype}
 - \usepackage{lipsum}
-- \usepackage[framemethod=tikz]{mdframed}
 - \usepackage{Sweave}
 - \usepackage{textcomp}
 - \usepackage{lmodern}
