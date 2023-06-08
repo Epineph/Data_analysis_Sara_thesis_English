@@ -97,7 +97,8 @@ knitr::opts_chunk$set(echo = FALSE)
 # You can use the code below that just sets the working directory,
 # i.e., the directory relative to which the rest of the files are read,
 # to the directory containing the R-markdown script.
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+myWorkingDir = (dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(myWorkingDir)
 r_refs("references.bib")
 ```
 ```{r loading data, echo=FALSE, tidy=TRUE}
