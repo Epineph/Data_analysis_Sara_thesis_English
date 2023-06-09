@@ -12,7 +12,7 @@ markdown = Redcarpet.new("setwd(dirname(rstudioapi::getActiveDocumentContext()$p
 getwd()")
 puts markdown.to_html
 ```
-```{r}
+```r
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 getwd()
 ```
