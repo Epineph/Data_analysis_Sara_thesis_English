@@ -20,7 +20,7 @@ If you want to keep the files in different folders, there are two different appr
 
 For example, where the data gets loaded you would have to change
 "RawDataAsNumerical.csv" to "/your/path/to/the/directory/RawDataAsNumerical.csv" on line 123 so that:
-```ruby
+```r
 dataAsNumerical = read.csv(
   "RawDataAsNumerical.csv",
   na.strings = "Na",
@@ -29,7 +29,7 @@ dataAsNumerical = read.csv(
 )
 ```
 becomes:
-```python
+```r
 dataAsNumerical = read.csv(
   "/your/path/to/the/directory/RawDataAsNumerical.csv",
   na.strings = "Na",
@@ -44,7 +44,7 @@ load("SCD.rda")
 on line 459, where you would have to change `load("SCD.rda")` to `load("/your/path/to/the/directory/SCD.rda")`.
 
 The regression plot that is a PNG file would similarly has to be changed (line 502) so that:
-```{=tex}
+```latex
 \includegraphics[width = \linewidth]{reg_table_2.png}
 ```
 should be changed to:
