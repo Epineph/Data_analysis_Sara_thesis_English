@@ -19,7 +19,7 @@ If you want to keep the files in different folders, there are two different appr
 1) If there is no systematic folder structure with respect to the R-markdown script and the files it reads (i.e., all the files are relatively randomly scatte) then you have to let R know the absolute path in each variable that reads or loads a file on your PC.
 
 For example, where the data gets loaded you would have to change
-"RawDataAsNumerical.csv" to "/your/path/to/the/directory/RawDataAsNumerical.csv" on line 123 so that:
+**"RawDataAsNumerical.csv"** to **"/your/path/to/the/directory/RawDataAsNumerical.csv"** on line 123 so that:
 ```r
 dataAsNumerical = read.csv(
   "RawDataAsNumerical.csv",
@@ -41,7 +41,14 @@ The same would be true for
 ```r
 load("SCD.rda")
 ```
-on line 459, where you would have to change `load("SCD.rda")` to `load("/your/path/to/the/directory/SCD.rda")`.
+on line 459, where you would have to change 
+```r 
+load("SCD.rda") 
+``` 
+to 
+```r 
+load("/your/path/to/the/directory/SCD.rda")
+```
 
 The regression plot that is a PNG file would similarly has to be changed (line 502) so that:
 ```latex
@@ -92,6 +99,6 @@ directory.
 
 # Running the code
 
-In order to run the code, one must first install R: https://cloud.r-project.org/ and R studio https://posit.co/download/rstudio-desktop/. All of which is free software. The packages loaded in the script in the sections with multiple library(name) must be installed by the user. Finally, it is a good idea to download Rtools, since some packages may need to be built from souce code and need compilation. Rtools can be found here: https://cran.r-project.org/bin/windows/Rtools/
+In order to run the code, one must first install **R**: https://cloud.r-project.org/ and **R studio** https://posit.co/download/rstudio-desktop/. **All of which is free software**. The packages loaded in the script in the sections with multiple library(name) must be installed by the user (*For you convenience, I have written the code in a way so that it automatically downloads, installs and loads a package if it is needed*). Finall, **download Rtools**, since some packages may need to be built from souce code and need compilation. Rtools can be found here: https://cran.r-project.org/bin/windows/Rtools/
 
 Make sure to download the version that matches your version of R.
