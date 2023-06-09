@@ -652,26 +652,15 @@ colnames(d_summary)[1:18] = c(
       "RatedLikelihoodOfEngCommunicationFutureWork")
 
 d_summary$gender = d$gender
-
 summary_stats_all = get_summary_stats(d_summary, type = "full", show = c("n", "mean", "sd", "se"))
-
 d_summary_fem = subset(d_summary, d_summary$gender == "Female")
-
 d_summary_male = subset(d_summary, d_summary$gender == "Male")
-
-
 summary_stats_fem = get_summary_stats(d_summary_fem, type = "full", show = c("n", "mean", "sd", "se"))
-
 summary_stats_male = get_summary_stats(d_summary_male, type = "full", show = c("n", "mean", "sd", "se"))
-
 colnames(summary_stats_all)[1] = "All_subjects"
-
 colnames(summary_stats_fem)[1] = "Females"
-
 colnames(summary_stats_male)[1] = "Males"
-
 acrossGenders_sum_stats = cbind(summary_stats_fem, summary_stats_male)
-
 ```
 
 ```{r}
@@ -749,7 +738,6 @@ pwc_comf
 
 ```{r, fig.height=7.0, fig.width=7.0, results='asis', fig.align='center'}
 lm_engAbilityInGeneral = lm(SP_EnglishAbilityInGeneral ~ gender, data = d)
-
 pwc_engAbilInGeneral = d %>% tukey_hsd(SP_EnglishAbilityInGeneral ~ gender)
 
 engAbilInGeneral_by_gender_t.test = d %>%
