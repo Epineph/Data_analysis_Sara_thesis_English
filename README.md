@@ -6,7 +6,12 @@ If you download the files, make sure to put all the files in the same directory 
 If you put the files in different folers, the code won't work unless you change the path in the code where files are imported, for example the .csv (dataset), image of an APA-standard regression table (produced by the apaTables package, which will not knit directly into the pdf, but exports it to a docx file, which then can be used an image imported by the R-Markdown script, which is what I did here), data used for illustrating residuals (the SCD.rda dataset) in regression models as well as the reference file (.bib). 
 
 This all depends on the working directory, which I have coded as: 
-
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+getwd()")
+puts markdown.to_html
+```
 ```{r}
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 getwd()
