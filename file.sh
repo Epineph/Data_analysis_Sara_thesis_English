@@ -89,6 +89,8 @@ echo heini:32167 | chpasswd
 #only if desired
 echo "heini ALL=(ALL) ALL" >> /etc/sudoers.d/heini
 
+grub-install --target=x86_
+
 #if adding sudoers is not desired run VISUDO before exit to make defaul user as sudoer / elevator user
 
 
