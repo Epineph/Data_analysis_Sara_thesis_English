@@ -5,8 +5,9 @@ pacman -Sy
 ln -sf /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime
 hwclock --systohc
 echo "en_DK.UTF-8 UTF-8" >> /etc/locale.gen
+echo "KEYMAP=dk" >> /etc/vconsole.conf
 locale-gen
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo "LANG=en_DK.UTF-8" >> /etc/locale.conf
 echo "arch-pc" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
