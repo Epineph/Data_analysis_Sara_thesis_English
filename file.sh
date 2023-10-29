@@ -1,6 +1,18 @@
 #!/bin/bash
 
-pacman -Sy
+loadkeys dk
+setfont ter-132b
+
+pacman-key --init
+pacman-key --populate
+
+
+
+pacstrap -K /mnt base base-devel linux-firmware linux linux-headers linux-lts linux-lts-headers sof-firmware sudo nano archlinux-keyring archinstall efibootmgr dosfstools iwd wpa_supplicant wget curl rsync
+
+cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist.bak
+
+arch-chroot /mnt
 
 ln -sf /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime
 hwclock --systohc
