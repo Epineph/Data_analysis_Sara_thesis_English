@@ -8,7 +8,7 @@ pacman-key --populate
 
 
 
-pacstrap -K /mnt base base-devel linux-firmware linux linux-headers linux-lts linux-lts-headers sof-firmware sudo nano archlinux-keyring archinstall efibootmgr dosfstools iwd wpa_supplicant wget curl rsync
+pacstrap -K /mnt base base-devel linux-firmware linux linux-headers linux-lts amd-ucode linux-lts-headers sof-firmware sudo nano archlinux-keyring archinstall efibootmgr dosfstools iwd wpa_supplicant wget curl rsync
 
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist.bak
 
