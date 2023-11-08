@@ -26,7 +26,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch-pc,localdomain arch-pc" >> /etc/hosts
 
 #remember to change the password here default is 1
-echo root:32167 | chpasswd
+echo root:123456 | chpasswd
 
 pacman -S grub base-devel efibootmgr networkmanager wpa_supplicant network-manager-applet dialog mtools dosfstools avahi xdg-user-dirs xdg-utils gvfs
 pacman -S gvfs-smb gvfs-mtp nfs-utils inetutils dnsutils alsa-utils bash-completion rsync reflector acpi 
